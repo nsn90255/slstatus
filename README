@@ -63,3 +63,8 @@ Configuration
 -------------
 slstatus can be customized by creating a custom config.h and (re)compiling the
 source code. This keeps it fast, secure and simple.
+
+Added by me
+-----------
+Don't forget to symlink the binary to /usr/bin
+And add "slstatus &" before dwm to your .xinitrc
