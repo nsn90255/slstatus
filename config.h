@@ -65,9 +65,9 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ cpu_perc, "CPU %s%% - ", NULL     },
+	{ cpu_perc, " CPU %s%% - ", NULL     },
 	{ ram_perc, "RAM %s%% - ", NULL     },
 	{ run_command, "VOL %s - ", "amixer sget Master | tail -1 | awk '{print $4 }' | sed 's@\\(\\[\\|\\]\\)@@g'" },
 	{ battery_perc, "BAT %s%% - ", "BAT0"},
-	{ datetime, "%s",           "%H:%M" },
+	{ datetime, "%s",           "%Hh%M" },
 };
