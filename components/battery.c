@@ -59,7 +59,7 @@
 			{ "Charging",    "(+)" },
 			{ "Discharging", "(-)" },
 			{ "Full",        "(full)" },
-			{ "Not charging", "(not charging)" },
+			{ "Not charging", "(n/c)" },
 		};
 		size_t i;
 		char path[PATH_MAX], state[12];
