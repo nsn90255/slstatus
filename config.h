@@ -69,6 +69,7 @@ static const struct arg args[] = {
 	{ ram_perc, "RAM %s%% - ", NULL     },
 	{ run_command, "VOL %s - ", "amixer sget Master | tail -1 | awk '{print $4 }' | sed 's@\\(\\[\\|\\]\\)@@g'" },
 	{ run_command, "LUM %s - ", "brightnessctl | awk '/Current brightness/ {print $4}' | sed 's/(//;s/)//'" },
-	{ battery_perc, "BAT %s%% - ", "BAT0"},
+	{ battery_perc, "BAT %s%% ", "BAT0"},
+	{ battery_state, "%s - ", "BAT0"},
 	{ datetime, "%s",           "%Hh%M" },
 };
