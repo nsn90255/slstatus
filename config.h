@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* interval between updates (in ms) */
-const unsigned int interval = 1000;
+const unsigned int interval = 3000;
 
 /* text to show if no value can be retrieved */
 static const char unknown_str[] = "n/a";
@@ -65,11 +65,11 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ cpu_perc, " CPU %s%% - ", NULL     },
-	{ ram_perc, "RAM %s%% - ", NULL     },
-	{ run_command, "VOL %s - ", "amixer sget Master | tail -1 | awk '{print $4 }' | sed 's@\\(\\[\\|\\]\\)@@g'" },
-	{ run_command, "LUM %s - ", "brightnessctl | awk '/Current brightness/ {print $4}' | sed 's/(//;s/)//'" },
-	{ battery_perc, "BAT %s%% ", "BAT0"},
+	{ cpu_perc, " %sC - ", NULL     },
+	{ ram_perc, "%sR - ", NULL     },
+	{ run_command, "%sV - ", "amixer sget Master | awk -F'[][]' '/Mono:/ { print $2 }' | sed 's/%//'" },
+	{ run_command, "%sL - ", "brightnessctl | awk -F'[()%]' '/Current brightness/ {print $2}'" },
+	{ battery_perc, "%s", "BAT0"},
 	{ battery_state, "%s - ", "BAT0"},
-	{ datetime, "%s",           "%Hh%M" },
+	{ datetime, "%s",           "%Y-%m-%dT%H:%M" },
 };
